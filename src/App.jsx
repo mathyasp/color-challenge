@@ -5,6 +5,10 @@ function App() {
     return Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
   };
 
+  const colorGenerator = () => {
+    return '#' + numberStringGenerator() + numberStringGenerator() + numberStringGenerator();
+  };
+
   return (
     <>
       <div className="container">
