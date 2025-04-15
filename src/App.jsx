@@ -1,3 +1,4 @@
+import { useState} from 'react';
 import './App.css'
 
 function App() {
@@ -9,12 +10,16 @@ function App() {
     return '#' + numberStringGenerator() + numberStringGenerator() + numberStringGenerator();
   };
 
+  const [squareOneColor, setSquareOneColor] = useState(colorGenerator());
+  const [squareTwoColor, setSquareTwoColor] = useState(colorGenerator());
+  const [squareThreeColor, setSquareThreeColor] = useState(colorGenerator());
+
   return (
     <>
       <div className="container">
-        <div className="square" style={{ backgroundColor: 'red' }}></div>
-        <div className="square" style={{ backgroundColor: 'green' }}></div>
-        <div className="square" style={{ backgroundColor: 'blue' }}></div>
+        <div className="square" style={{ backgroundColor: squareOneColor }}></div>
+        <div className="square" style={{ backgroundColor: squareTwoColor }}></div>
+        <div className="square" style={{ backgroundColor: squareThreeColor }}></div>
       </div>
       <div className="color-display">
         <p>Placeholder Hex Color: #FF0000</p>
