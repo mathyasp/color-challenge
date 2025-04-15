@@ -1,6 +1,10 @@
 import './App.css'
 
 function App() {
+  const numberStringGenerator = () => {
+    return Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+  };
+
   return (
     <>
       <div className="container">
