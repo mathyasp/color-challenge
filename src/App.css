@@ -17,6 +17,9 @@
   border: 1px solid #333;
   cursor: pointer;
   transition: transform 0.2s, border 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .square:hover {

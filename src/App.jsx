@@ -38,11 +38,10 @@ function App() {
   const checkGuess = (color) => {
     if (color === answer) {
       setResult('Correct');
-      setShowCorrect(false);
     } else {
       setResult('Incorrect');
-      setShowCorrect(true);
     };
+    setShowCorrect(true);
   };
 
   return (
@@ -52,17 +51,23 @@ function App() {
           className={`square ${showCorrect && answer === 'one' ? 'correct' : ''}`} 
           style={{ backgroundColor: colors.one }} 
           onClick={() => checkGuess('one')}
-        ></div>
+        >
+          <p>{showCorrect && colors.one}</p>
+        </div>
         <div 
           className={`square ${showCorrect && answer === 'two' ? 'correct' : ''}`} 
           style={{ backgroundColor: colors.two }} 
           onClick={() => checkGuess('two')}
-        ></div>
+        >
+          <p>{showCorrect && colors.two}</p>
+        </div>
         <div 
           className={`square ${showCorrect && answer === 'three' ? 'correct' : ''}`} 
           style={{ backgroundColor: colors.three }} 
           onClick={() => checkGuess('three')}
-        ></div>
+        >
+          <p>{showCorrect && colors.three}</p>
+        </div>
       </div>
       <div className="color-display">
         <p>Pick which box is this color: {colors[answer]}</p>
