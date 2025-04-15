@@ -14,7 +14,14 @@
 .square {
   width: 100px;
   height: 100px;
-  border: 1px solid black;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.square:hover {
+  transform: scale(1.05);
+  border: 2px solid #333;
 }
 
 .message-area {
