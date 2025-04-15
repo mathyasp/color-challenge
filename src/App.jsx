@@ -10,6 +10,12 @@ function App() {
     return '#' + numberStringGenerator() + numberStringGenerator() + numberStringGenerator();
   };
 
+  const resetGame = () => {
+    setSquareOneColor(colorGenerator());
+    setSquareTwoColor(colorGenerator());
+    setSquareThreeColor(colorGenerator());
+  }
+
   const [squareOneColor, setSquareOneColor] = useState(colorGenerator());
   const [squareTwoColor, setSquareTwoColor] = useState(colorGenerator());
   const [squareThreeColor, setSquareThreeColor] = useState(colorGenerator());
@@ -28,7 +34,7 @@ function App() {
         
       </div>
       <div className="button-container">
-        <button>Reset</button>
+        <button onClick={resetGame}>Reset</button>
       </div>
     </>
   )
