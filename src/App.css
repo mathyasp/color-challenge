@@ -24,6 +24,11 @@
   border: 2px solid #333;
 }
 
+.square.correct {
+  border: 3px solid #4CAF50;
+  box-shadow: 0 0 10px #4CAF50;
+}
+
 .message-area {
   margin-top: 15px;
   min-height: 36px;
