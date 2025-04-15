@@ -10,11 +10,17 @@ function App() {
     return '#' + numberStringGenerator() + numberStringGenerator() + numberStringGenerator();
   };
 
+  const getRandomOption = () => {
+    const options = ['one', 'two', 'three'];
+    return options[Math.floor(Math.random() * options.length)];
+  };
+
   const [colors, setColors] = useState({
     one: colorGenerator(),
     two: colorGenerator(),
     three: colorGenerator()
   });
+  const [answer, setAnswer] = useState(getRandomOption);
 
   const resetGame = () => {
     setColors({
@@ -22,6 +28,8 @@ function App() {
       two: colorGenerator(),
       three: colorGenerator()
     });
+    
+    setAnswer(getRandomOption());
   }
 
   return (
@@ -32,7 +40,7 @@ function App() {
         <div className="square" style={{ backgroundColor: colors.three }}></div>
       </div>
       <div className="color-display">
-        <p>Placeholder Hex Color: #FF0000</p>
+        <p>Pick which box is this color:{colors[answer]}</p>
       </div>
       <div className="message-area">
         
