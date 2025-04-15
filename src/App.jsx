@@ -10,22 +10,26 @@ function App() {
     return '#' + numberStringGenerator() + numberStringGenerator() + numberStringGenerator();
   };
 
-  const resetGame = () => {
-    setSquareOneColor(colorGenerator());
-    setSquareTwoColor(colorGenerator());
-    setSquareThreeColor(colorGenerator());
-  }
+  const [colors, setColors] = useState({
+    one: colorGenerator(),
+    two: colorGenerator(),
+    three: colorGenerator()
+  });
 
-  const [squareOneColor, setSquareOneColor] = useState(colorGenerator());
-  const [squareTwoColor, setSquareTwoColor] = useState(colorGenerator());
-  const [squareThreeColor, setSquareThreeColor] = useState(colorGenerator());
+  const resetGame = () => {
+    setColors({
+      one: colorGenerator(),
+      two: colorGenerator(),
+      three: colorGenerator()
+    });
+  }
 
   return (
     <>
       <div className="container">
-        <div className="square" style={{ backgroundColor: squareOneColor }}></div>
-        <div className="square" style={{ backgroundColor: squareTwoColor }}></div>
-        <div className="square" style={{ backgroundColor: squareThreeColor }}></div>
+        <div className="square" style={{ backgroundColor: colors.one }}></div>
+        <div className="square" style={{ backgroundColor: colors.two }}></div>
+        <div className="square" style={{ backgroundColor: colors.three }}></div>
       </div>
       <div className="color-display">
         <p>Placeholder Hex Color: #FF0000</p>
